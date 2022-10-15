@@ -1,9 +1,26 @@
 
 function anagrama(wordA ,wordB) {
-    if(wordA.toLowerCase() == wordB.toLowerCase()){
-        return false
+    wordA = wordA.toLowerCase();
+    wordB = wordB.toLowerCase();    
+    console.log(wordA, wordB);
+    
+    wordA = wordA.split("");
+    wordB = wordB.split("");
+    console.log(wordA, wordB);
+    
+    wordA = wordA.sort();
+    wordB = wordB.sort();
+    console.log(wordA, wordB);
+
+    wordA = wordA.join("");
+    wordB = wordB.join("");
+    console.log(wordA, wordB);
+
+    if(wordA !== wordB){
+        return false;
+    } else if (wordA === wordB){
+        return true;
     }
-    return wordA.toLowerCase().toString().toCharArray().sortedArray().contentEquals(wordB.toLowerCase().toString().sortedArray())
 }
 
-console.log(anagrama('amor', 'mar'));
+console.log(anagrama('aMOr', 'mAro'));
